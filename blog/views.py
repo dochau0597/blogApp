@@ -47,6 +47,3 @@ class PostList(LoginRequiredMixin, ListView):
 class PostDetail(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'post_detail.html'
-
-class BinhLuanVien(ListView):
-    template_name = 'index.html'
