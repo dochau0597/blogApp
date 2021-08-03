@@ -43,7 +43,8 @@ class RegisterPage(FormView):
 class PostList(LoginRequiredMixin, ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
-
+    paginate_by = 5 # số lượng bài được đăng trên 1 trang nếu nhiều hơn sẽ chuyển sang trang mới
+ 
 class PostDetail(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'post_detail.html'
